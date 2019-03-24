@@ -244,6 +244,7 @@ else
 	openvpn --genkey --secret /etc/openvpn/ta.key
 	# Create the DH parameters file using the predefined ffdhe2048 group
 	./easyrsa gen-dh
+	mv dh.pem /etc/openvpn/
 	# Generate server.conf
 	echo "port $PORT
 proto $PROTOCOL
