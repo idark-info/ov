@@ -1,6 +1,6 @@
 # ov
 <h1>Установка</h1>
-<code>wget https://git.io/fjJ1t -O openvpn-install.sh && bash openvpn-install.sh</code>
+<code>wget https://git.io/fjJ1a -O openvpn-install.sh && bash openvpn-install.sh</code>
 
 
 <br><br>
