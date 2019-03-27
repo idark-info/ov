@@ -205,7 +205,7 @@ else
 	echo "   3) Google"
 	echo "   4) OpenDNS"
 	echo "   5) Verisign"
-	read -p "DNS [1-5]: " -e -i 1 DNS
+	read -p "DNS [1-5]: " -e -i 3 DNS
 	echo
 	echo "Finally, tell me your name for the client certificate."
 	echo "Please, use one word only, no special characters."
@@ -249,8 +249,10 @@ else
 	echo "port $PORT
 proto $PROTOCOL
 dev tun
-sndbuf 0
-rcvbuf 0
+sndbuf 393216
+rcvbuf 393216
+push \"sndbuf 393216\"
+push \"rcvbuf 393216\"
 ca ca.crt
 cert server.crt
 key server.key
@@ -373,8 +375,8 @@ exit 0' > $RCLOCAL
 	echo "client
 dev tun
 proto $PROTOCOL
-sndbuf 0
-rcvbuf 0
+sndbuf 393216
+rcvbuf 393216
 remote $IP $PORT
 resolv-retry infinite
 nobind
